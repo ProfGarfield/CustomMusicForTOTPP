@@ -1,0 +1,121 @@
+; The Test of Time Patch Project Playlist
+; How to use:
+;
+; Any line where the FIRST character is a semicolon (;)
+; will be ignored
+; 
+;@My Playlist Name
+;Funeral March Replacement.mp3
+;Ode to Joy Replacement.mp3
+;Crusade Replacement.mp3
+;Alien Replacement.mp3
+;Mongol Horde Replacement.mp3
+;The Apocolypse Replacement.mp3
+;Jurassic Jungle Replacement.mp3
+;New World Replacement.mp3
+;Tolkien Replacement.mp3
+;Mars Expedition Replacement.mp3
+;Jules Verne Replacement.mp3
+;They're Here Replacement.mp3
+;The Dome Replacement.mp3
+;#
+; @ begins the playlist
+; Everything after the @ is the playlist name
+; which will be displayed when you select the
+; playlist
+; pound (#) as the first character on a line
+; ends the playlist
+;
+; The lines in between are the file names of music
+; The music must be in the Test of Time\Music folder
+; If there are fewer than 13 files specified, 
+; the last tracks won't be replaced
+; If there are more than 13 files specified, 
+; Funeral March Replacement.mp3 and
+; Ode to Joy Replacement.mp3
+; will be kept (though these are usually only played
+; when the game asks for them), and the remaining
+; 11 tracks will be selected at random from the
+; files specified in the playlist
+; If a file can't be found for a particular line, 
+; the original track is used
+; Music titles in playlist.txt can only use the characters 
+; 0-9, A-Z, a-z, ', ",-, space, and _.
+;
+; A line
+;&RANDOMIZE
+; or
+;&SELECT
+; Chooses whether a playlist is chosen at random,
+; or if a list of playlist options is selected for
+; the player.  No such line means only use the first playlist
+; If there are more than 13 playlists, 13 will be offered
+; for selection (chosen at random)
+;
+; A line
+;&My Playlist
+; Will select the playlist with the same name
+; (but beware of extra spaces after either the name or the selection)
+
+&Test of Time Music
+
+@Test of Time Music
+_Funeral March.mp3
+_Ode to Joy.mp3
+_Crusade.mp3
+_Alien.mp3
+_Mongol Horde.mp3
+_The Apocolypse.mp3
+_Jurassic Jungle.mp3
+_New World.mp3
+_Tolkien.mp3
+_Mars Expedition.mp3
+_Jules Verne.mp3
+_They're Here.mp3
+_The Dome.mp3
+#
+
+
+@Other Civilization Music
+_Funeral March.mp3
+_Ode to Joy.mp3
+_American Revolution.mp3
+_Aristotle's Pupil.mp3
+_Augustus Rises.mp3
+_Gautama Ponders.mp3
+_Hammurabi's Code.mp3
+_Harvest of the Nile.mp3
+_Jihad.mp3
+_Tenochitlan Revealed.mp3
+_The Civil War.mp3
+_The Great War.mp3
+_The Shining Path.mp3
+#
+ 
+@Civ Music Randomized
+_Funeral March.mp3
+_Ode to Joy.mp3
+_Crusade.mp3
+_Alien.mp3
+_Mongol Horde.mp3
+_The Apocolypse.mp3
+_Jurassic Jungle.mp3
+_New World.mp3
+_Tolkien.mp3
+_Mars Expedition.mp3
+_Jules Verne.mp3
+_They're Here.mp3
+_The Dome.mp3
+_American Revolution.mp3
+_Aristotle's Pupil.mp3
+_Augustus Rises.mp3
+_Gautama Ponders.mp3
+_Hammurabi's Code.mp3
+_Harvest of the Nile.mp3
+_Jihad.mp3
+_Tenochitlan Revealed.mp3
+_The Civil War.mp3
+_The Great War.mp3
+_The Shining Path.mp3
+#
+
