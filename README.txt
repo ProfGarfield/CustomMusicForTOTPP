@@ -1,3 +1,5 @@
+This is an addition to the Test of Time Patch Project, which can be found at https://forums.civfanatics.com/threads/the-test-of-time-patch-project.517282/
+
 This module allows for custom music for scenarios.  You will need the TOTPP music patch enabled for this module to work.
 
 WARNING: The Lua code in this module overwrites files.
