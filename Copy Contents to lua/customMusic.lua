@@ -18,6 +18,8 @@
 -- and if either one exists, it is used
 -- 
 
+math.randomseed(os.time())
+
 file = require("file")
 local originalMusicNames = {
 "Funeral March",
