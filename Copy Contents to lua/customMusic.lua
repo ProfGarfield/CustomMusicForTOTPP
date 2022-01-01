@@ -18,8 +18,6 @@
 -- and if either one exists, it is used
 -- 
 
-math.randomseed(os.time())
-
 file = require("file")
 local originalMusicNames = {
 "Funeral March",
@@ -37,6 +35,7 @@ local originalMusicNames = {
 "The Dome",
 }
 
+math.randomseed(os.time())
 
 
 -- customMusicDirectory is scenarioDirectory\Music unless otherwise specified
@@ -88,16 +87,16 @@ local function importMusic(scenarioDirectory,customMusicDirectory)
     --    end
     --end
     for trackNumber,trackTitle in pairs(musicTitles) do
-        if file.exists(musicDir.."\\_"..trackTitle..".mp3") then
+        if file.exists(customMusicDirectory.."\\"..trackTitle..".mp3") then
+            file.copy(customMusicDirectory.."\\"..trackTitle..".mp3",musicDir.."\\"..originalMusicNames[trackNumber]..".mp3")
+        elseif file.exists(customMusicDirectory.."\\_"..trackTitle..".mp3") then
+            file.copy(customMusicDirectory.."\\_"..trackTitle..".mp3",musicDir.."\\"..originalMusicNames[trackNumber]..".mp3")
+        elseif file.exists(musicDir.."\\_"..trackTitle..".mp3") then
             file.copy(musicDir.."\\_"..trackTitle..".mp3",musicDir.."\\"..originalMusicNames[trackNumber]..".mp3")
         else
-            if file.exists(customMusicDirectory.."\\"..trackTitle..".mp3") then
-                file.copy(customMusicDirectory.."\\"..trackTitle..".mp3",musicDir.."\\"..originalMusicNames[trackNumber]..".mp3")
-            elseif file.exists(customMusicDirectory.."\\_"..trackTitle..".mp3") then
-                file.copy(customMusicDirectory.."\\_"..trackTitle..".mp3",musicDir.."\\"..originalMusicNames[trackNumber]..".mp3")
-            else
-                error("importMusic: can't find the track "..trackTitle.." .")
-            end
+            civ.ui.text("Import Music: Could not find a file for "..trackTitle..".  Using original music instead.")
+            file.copy(musicDir.."\\_"..originalMusicNames[trackNumber]..".mp3",musicDir.."\\"..originalMusicNames[trackNumber]..".mp3")
+            --error("importMusic: can't find the track "..trackTitle.." .")
         end
         -- old version of code, where music was automatically copied 
 
