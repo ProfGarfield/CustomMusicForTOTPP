@@ -76,7 +76,8 @@ local function importMusic(scenarioDirectory,customMusicDirectory)
     local musicDir = civ.getToTDir().."\\Music"
     -- playing this 'silence' makes sure we don't try to overwrite a
     -- file being played
-    civ.playMusic(musicDir.."\\silence.mp3")
+    --civ.playMusic(musicDir.."\\silence.mp3")
+    civ.playMusic("silence.mp3")
     -- This will copy the Alien.mp3 to _Alien.mp3, if _Alien.mp3 is not already in the
     -- Music directory.  This should only happen the first time this is run (since afterward,
     -- the tracks with _ will exist), and will preserve the original music
@@ -116,7 +117,8 @@ end
 
 local function resetMusic()
     local musicDir = civ.getToTDir().."\\Music"
-    civ.playMusic(musicDir.."\\silence.mp3")
+    --civ.playMusic(musicDir.."\\silence.mp3")
+    civ.playMusic("silence.mp3")
     for trackNumber,trackName in pairs(originalMusicNames) do
         file.copy(musicDir.."\\_"..trackName..".mp3",musicDir.."\\"..trackName..".mp3")
     end
@@ -230,7 +232,8 @@ local function choosePlaylist()
         playlistTable = {chosenPlaylist}
     end
     resetMusic()
-    civ.playMusic(musicDir.."\\silence.mp3")
+    --civ.playMusic(musicDir.."\\silence.mp3")
+    civ.playMusic("silence.mp3")
     local chosenPlaylist = playlistTable[1]
     for i=1,13 do
         --civ.ui.text(tostring(chosenPlaylist[i]))
